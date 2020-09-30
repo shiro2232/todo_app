@@ -52,6 +52,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li><a href="{{ route('addTaskShow') }}">Add Task</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -70,6 +71,12 @@
                 </div>
             </div>
         </nav>
+        <!-- フラッシュメッセージ -->
+        @if (session('flash_message'))
+            <div class="flash js-flash" role="alert">
+                {{ session('flash_message') }}
+            </div>
+        @endif
 
         @yield('content')
     </div>

@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//タスク関係
+Route::get('/task/list', 'TaskController@taskListShow')->name('taskListShow');
+Route::get('/task/add', 'TaskController@addTaskShow')->name('addTaskShow');
+Route::post('/task/add', 'TaskController@addTask')->name('addTask');
