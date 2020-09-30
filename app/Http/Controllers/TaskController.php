@@ -34,13 +34,25 @@ class TaskController extends Controller
             return redirect('login')->with('flash_message','ログインしてください');
         }
     }
-
-    //タスクを追加
-    public function addTask (Request $request) {
+    //タスクを追加（タスク名のみ）
+    public function addTask(Request $request) {
         $this->taskValidator($request->all())->validate();
         $task = new Task;
         $task->fill($request->all());
         $task->user_id = Auth::user()->id;
+        $task->complete_flg = false;
+        $task->delete_flg = false;
+        $task->save();
+        return redirect('/task/list')->with('flash_message','タスクを追加しました');
+    }
+
+    //タスクを追加（詳細）
+    public function addTaskDetail (Request $request) {
+        $this->taskValidator($request->all())->validate();
+        $task = new Task;
+        $task->fill($request->all());
+        $task->user_id = Auth::user()->id;
+        $task->complete_flg = false;
         $task->delete_flg = false;
         $task->save();
         return redirect('/task/list')->with('flash_message','タスクを追加しました');

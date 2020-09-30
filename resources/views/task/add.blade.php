@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ __('add_task') }}</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('addTask') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('addTaskDetail') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('task_name') ? ' has-error' : '' }}">
                             <label for="task_name" class="col-md-4 control-label">{{ __('task_name') }}</label>
