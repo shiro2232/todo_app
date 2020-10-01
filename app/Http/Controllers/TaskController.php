@@ -58,6 +58,19 @@ class TaskController extends Controller
         return redirect('/task/list')->with('flash_message','タスクを追加しました');
     }
 
+    //タスクを完了
+    public function completeTask ($id) {
+        $task = Task::find($id);
+        //タスクが存在するかつ不正アクセスしていないか判定
+        if($task && $task->user_id === Auth::user()->id) {
+            $task->complete_flg = true;
+            $task->save();
+            return redirect('/task/list')->with('flash_message','タスクを完了しました');
+        } else {
+            return redirect('login')->with('flash_message','ログインしてください');
+        }
+    }
+    
     //タスクを削除
     public function deleteTask ($id) {
         $task = Task::find($id);
