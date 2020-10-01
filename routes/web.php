@@ -24,3 +24,4 @@ Route::get('/task/list', 'TaskController@taskListShow')->name('taskListShow');
 Route::get('/task/add', 'TaskController@addTaskShow')->name('addTaskShow');
 Route::post('/task/add', 'TaskController@addTask')->name('addTask');
 Route::post('/task/addDetail', 'TaskController@addTaskDetail')->name('addTaskDetail');
+Route::post('/task/delete/{id}', 'TaskController@deleteTask')->name('deleteTask');
