@@ -52,6 +52,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li><a href="{{ route('taskListShow') }}">Task List</a></li>
                                     <li><a href="{{ route('addTaskShow') }}">Add Task</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"

@@ -1,6 +1,7 @@
 {
     "task_name": "タスク名",
-    "add_task_button": "追加する",
+    "go_add": "追加する",
+    "go_delete": "削除する",
     "add_task": "タスクの追加",
     "task_list": "タスクの追加"
 }
