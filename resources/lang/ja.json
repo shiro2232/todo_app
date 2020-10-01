@@ -3,5 +3,6 @@
     "go_add": "追加する",
     "go_delete": "削除する",
     "add_task": "タスクの追加",
+    "go_complete": "タスクの完了",
     "task_list": "タスクの追加"
 }

@@ -12,6 +12,10 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">{{ $task->task_name }}</h3>
+                                    <form action="{{ route('completeTask',$task->id) }}" method="post" class="d-inline">
+                                        {{ csrf_field() }}
+                                        <button class="btn btn-danger" onclick='return );'>{{ __('go_complete')  }}</button>
+                                    </form>
                                     <form action="{{ route('deleteTask',$task->id) }}" method="post" class="d-inline">
                                         {{ csrf_field() }}
                                         <button class="btn btn-danger" onclick='return confirm("削除しますか？");'>{{ __('go_delete')  }}</button>
