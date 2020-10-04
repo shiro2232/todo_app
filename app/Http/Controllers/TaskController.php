@@ -17,7 +17,9 @@ class TaskController extends Controller
             //ログイン中ユーザーで未完了のタスクのみ取得
             $tasks = Task::where('user_id', Auth::user()->id)
                 ->where('complete_flg', false)
-                ->where('delete_flg', false)->get();
+                ->where('delete_flg', false)
+                ->orderBy('updated_at', 'desc')
+                ->get();
             return view('task.list', ['tasks' => $tasks]);
         } else {
            return redirect('login')->with('flash_message','ログインしてください');
